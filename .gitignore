@@ -1,8 +1,10 @@
 .idea
-*.class
+build/
+out/
 *.iml
-*.jar
+*.ser
 *.zip
-/build/
-./out/
-./ser
+*.txt
+# Package Files #
+*.war
+*.ear
