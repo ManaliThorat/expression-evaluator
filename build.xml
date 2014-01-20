@@ -121,7 +121,7 @@
     <target name = "createFolderStructer" depends="coverage">
         <mkdir dir="build/distribute/bin"/>
         <mkdir dir="build/distribute/lib"/>
-        <copy file="mtCut.sh" todir="build/distribute/bin"/>
+        <copy file="evaluator.sh" todir="build/distribute/bin"/>
         <copy file = "README.md" tofile = "build/distribute/README.md"/>
     </target>
 
