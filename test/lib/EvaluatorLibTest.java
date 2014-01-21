@@ -29,4 +29,18 @@ public class EvaluatorLibTest {
         int actual = evl.evaluate();
         assertEquals(expected,actual);
     }
+    @Test
+    public void testForMultiplicationOfTwoNumbers() throws Exception {
+        EvaluatorLib evl = new EvaluatorLib("5 * 2");
+        int expected = 10;
+        int actual = evl.evaluate();
+        assertEquals(expected,actual);
+    }
+    @Test
+    public void testForDivisionOfTwoNumbers() throws Exception {
+        EvaluatorLib evl = new EvaluatorLib("10 / 2");
+        int expected = 5;
+        int actual = evl.evaluate();
+        assertEquals(expected,actual);
+    }
 }

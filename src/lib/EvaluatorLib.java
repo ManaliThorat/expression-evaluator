@@ -15,6 +15,10 @@ public class EvaluatorLib {
             result = addition(num1, num2);
         if(0 == resultArray[1].compareTo("-"))
             result = substraction(num1, num2);
+        if(0 == resultArray[1].compareTo("*"))
+            result = multiplication(num1, num2);
+        if(0 == resultArray[1].compareTo("/"))
+            result = division(num1, num2);
         return result;
     }
     public int addition(int num1,int num2){
@@ -22,5 +26,11 @@ public class EvaluatorLib {
     }
     public int substraction(int num1,int num2){
         return num1 - num2;
+    }
+    public int multiplication(int num1,int num2){
+        return num1 * num2;
+    }
+    public int division(int num1,int num2){
+        return num1 / num2;
     }
 }
