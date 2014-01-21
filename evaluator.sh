@@ -1,1 +1,1 @@
-java -cp $UNIX/lib/unix-tools.jar manalit.unixtools.cli.Cut "${@}"
+java -cp $EVALUATOR_HOME/lib/expression-evaluator.jar cli.Evaluator "${@}"

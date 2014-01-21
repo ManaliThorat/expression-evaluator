@@ -43,4 +43,11 @@ public class EvaluatorLibTest {
         int actual = evl.evaluate();
         assertEquals(expected,actual);
     }
+    @Test
+    public void testForExponentialOfTwoNumbers() throws Exception {
+        EvaluatorLib evl = new EvaluatorLib("10 ^ 2");
+        int expected = 100;
+        int actual = evl.evaluate();
+        assertEquals(expected,actual);
+    }
 }

@@ -19,6 +19,8 @@ public class EvaluatorLib {
             result = multiplication(num1, num2);
         if(0 == resultArray[1].compareTo("/"))
             result = division(num1, num2);
+        if(0 == resultArray[1].compareTo("^"))
+            result = exponential(num1, num2);
         return result;
     }
     public int addition(int num1,int num2){
@@ -32,5 +34,8 @@ public class EvaluatorLib {
     }
     public int division(int num1,int num2){
         return num1 / num2;
+    }
+    public int exponential(int num1, int num2){
+        return (int)Math.pow(num1,num2);
     }
 }
