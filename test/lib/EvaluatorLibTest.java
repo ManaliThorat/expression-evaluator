@@ -23,7 +23,7 @@ public class EvaluatorLibTest {
         assertEquals(expected,actual);
     }
     @Test
-    public void testForSubsrtactionOfTwoNumbers() throws Exception {
+    public void testForSubstractionOfTwoNumbers() throws Exception {
         EvaluatorLib evl = new EvaluatorLib("5 - 2");
         int expected = 3;
         int actual = evl.evaluate();
