@@ -1,4 +1,4 @@
-<project name = "expression-evaluator" default = "runTest">
+<project name = "expression-evaluator" default = "dist">
     <target name = "clean">
         <delete dir = "build"/>
     </target>
@@ -108,7 +108,11 @@
         <cobertura-report srcdir="src" destdir="build/code-coverage/coverage/xml" format="xml" />
     </target>
 
-    <target name="coverage-report-2">
+    <target name="summary-coverage-report">
+        <cobertura-report srcdir="src" destdir="build/code-coverage/coverage/summaryxml" format="summaryXml" />
+    </target>
+
+    <target name="alternate-coverage-report">
         <cobertura-report destdir="build/code-coverage/coverage/html">
             <fileset dir="src">
                 <include name="**/*.java"/>
@@ -116,7 +120,8 @@
         </cobertura-report>
     </target>
     <target name="coverage"
-            depends="instrument,test-coverage,coverage-report,coverage-report-2"/>
+            depends="instrument,test-coverage,coverage-report,summary-coverage-report,alternate-coverage-report"
+            description="Compile, instrument ourself, run the tests and generate JUnit and coverage reports."/>
 
     <target name = "createFolderStructer" depends="coverage">
         <mkdir dir="build/distribute/bin"/>
@@ -128,6 +133,7 @@
     <target name = "build" depends = "createFolderStructer">
         <jar destfile = "build/distribute/lib/expression-evaluator.jar" basedir = "build/classes/src"/>
     </target>
+
 
     <target name = "dist" depends = "build">
         <zip destfile = "expression-evaluator.zip" basedir = "build/distribute" update = "true"/>
