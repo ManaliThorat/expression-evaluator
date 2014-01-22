@@ -11,43 +11,16 @@ public class EvaluatorLibTest {
     @Test
     public void testEvaluate() throws Exception {
         String input = "1 + 2";
-        EvaluatorLib evl = new EvaluatorLib(input);
-        int res = evl.evaluate();
+        EvaluatorLib evl = new EvaluatorLib();
+        int res = evl.EvaluateExpression(input);
         assertEquals(res,3);
     }
     @Test
-    public void testForAdditionOfTwoNumbers() throws Exception {
-        EvaluatorLib evl = new EvaluatorLib("2 + 3");
-        int expected = 5;
-        int actual = evl.evaluate();
-        assertEquals(expected,actual);
+    public void testEvaluateForMultipleOperations() throws Exception {
+        String input = "1 + 2 * 2";
+        EvaluatorLib evl = new EvaluatorLib();
+        int res = evl.EvaluateExpression(input);
+        assertEquals(res,6);
     }
-    @Test
-    public void testForSubstractionOfTwoNumbers() throws Exception {
-        EvaluatorLib evl = new EvaluatorLib("5 - 2");
-        int expected = 3;
-        int actual = evl.evaluate();
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void testForMultiplicationOfTwoNumbers() throws Exception {
-        EvaluatorLib evl = new EvaluatorLib("5 * 2");
-        int expected = 10;
-        int actual = evl.evaluate();
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void testForDivisionOfTwoNumbers() throws Exception {
-        EvaluatorLib evl = new EvaluatorLib("10 / 2");
-        int expected = 5;
-        int actual = evl.evaluate();
-        assertEquals(expected,actual);
-    }
-    @Test
-    public void testForExponentialOfTwoNumbers() throws Exception {
-        EvaluatorLib evl = new EvaluatorLib("10 ^ 2");
-        int expected = 100;
-        int actual = evl.evaluate();
-        assertEquals(expected,actual);
-    }
+
 }
