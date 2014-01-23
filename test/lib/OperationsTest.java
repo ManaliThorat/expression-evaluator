@@ -36,6 +36,7 @@ public class OperationsTest {
         int actual = evl.evaluate(10, "/", 2);
         assertEquals(expected,actual);
     }
+
     @Test
     public void testForExponentialOfTwoNumbers() throws Exception {
         Operations evl = new Operations();

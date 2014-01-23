@@ -14,6 +14,20 @@ Expression evaluator will take a expression as input from command line. It will 
 
 5.ex sh evaluator.sh "1 + 2".
 
+##Relaese 0.3
+
+    * Only one bracket allowed.
+
+    Bugs:
+        It not supports floating result.
+
+##Relaese 0.2
+
+    * Two or more operands and operators can be given.
+
+    Bugs:
+        It not supports floating result.
+
 ##Relaese 0.1
 
 Input Specification:-
@@ -25,13 +39,3 @@ Input Specification:-
     * Operators possible are :-
         +,-,*,/,^
 
-##Relaese 0.2
-
-Input Specification:-
-
-    * Only integer operands are possible.
-    * Two or more operands and one operator can be given.
-    * Brackets not allowed.
-    * There must be a space between each operand and operator.
-    * Operators possible are :-
-        +,-,*,/,^

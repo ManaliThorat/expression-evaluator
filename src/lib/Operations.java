@@ -6,16 +6,21 @@ package lib;
 public class Operations {
     public int evaluate(int num1,String operator,int num2){
         int result = 0;
-        if(0 == operator.compareTo("+"))
+        if(0 == operator.compareTo("+")){
             result = addition(num1, num2);
-        if(0 == operator.compareTo("-"))
+        }
+        if(0 == operator.compareTo("-")) {
             result = substraction(num1, num2);
-        if(0 == operator.compareTo("*"))
+        }
+        if(0 == operator.compareTo("*")) {
             result = multiplication(num1, num2);
-        if(0 == operator.compareTo("/"))
+        }
+        if(0 == operator.compareTo("/")) {
             result = division(num1, num2);
-        if(0 == operator.compareTo("^"))
+        }
+        if(0 == operator.compareTo("^")) {
             result = exponential(num1, num2);
+        }
         return result;
     }
 
