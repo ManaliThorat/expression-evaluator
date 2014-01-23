@@ -5,7 +5,13 @@ import lib.EvaluatorLib;
 public class Evaluator {
     public static void main(String[] args) throws Exception {
         EvaluatorLib evl = new EvaluatorLib();
-        int res = evl.EvaluateExpression(args[0]);
-        System.out.println(res);
+        try {
+            int res = evl.EvaluateExpression(args[0]);
+            System.out.println(res);
+        }
+        catch (Exception e){
+            System.out.println("wrong input");
+        }
+
     }
 }

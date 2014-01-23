@@ -17,6 +17,7 @@ Expression evaluator will take a expression as input from command line. It will 
 ##Relaese 0.3
 
     * Only one bracket allowed.
+    * Brackets should be attached to number.
 
     Bugs:
         It not supports floating result.
