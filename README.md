@@ -14,6 +14,10 @@ Expression evaluator will take a expression as input from command line. It will 
 
 5.ex sh evaluator.sh "1 + 2".
 
+##Relaese 0.5
+
+     * It supports decimal operations.
+
 ##Relaese 0.4
 
     * Nesting of brackets is allowed.

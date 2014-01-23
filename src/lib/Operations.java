@@ -4,8 +4,8 @@ package lib;
  * Created by manalit on 1/22/14.
  */
 public class Operations {
-    public int evaluate(int num1,String operator,int num2){
-        int result = 0;
+    public double evaluate(double num1,String operator,double num2){
+        double result = 0;
         if(0 == operator.compareTo("+")){
             result = addition(num1, num2);
         }
@@ -24,19 +24,19 @@ public class Operations {
         return result;
     }
 
-    public int addition(int num1,int num2){
+    public double addition(double num1,double num2){
         return num1 + num2;
     }
-    public int substraction(int num1,int num2){
+    public double substraction(double num1,double num2){
         return num1 - num2;
     }
-    public int multiplication(int num1,int num2){
+    public double multiplication(double num1,double num2){
         return num1 * num2;
     }
-    public int division(int num1,int num2){
+    public double division(double num1,double num2){
         return num1 / num2;
     }
-    public int exponential(int num1, int num2){
-        return (int)Math.pow(num1,num2);
+    public double exponential(double num1, double num2){
+        return Math.pow(num1,num2);
     }
 }
