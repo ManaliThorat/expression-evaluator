@@ -30,14 +30,14 @@ public class EvaluatorLibTest {
         assertEquals(res,2);
     }
     @Test
-    public void testEvaluateForParanthisesOperations() throws Exception {
+    public void testEvaluateForParenthesesOperations() throws Exception {
         String input = "(1 + 2) * 2";
         EvaluatorLib evl = new EvaluatorLib();
         int res = evl.evaluateExpression(input);
         assertEquals(res,6);
     }
     @Test
-    public void testEvaluateForParanthisesOperationsAtEnd() throws Exception {
+    public void testEvaluateForParenthesesOperationsAtEnd() throws Exception {
         String input = "1 + (2 * 2)";
         EvaluatorLib evl = new EvaluatorLib();
         int res = evl.evaluateExpression(input);
@@ -49,6 +49,20 @@ public class EvaluatorLibTest {
         EvaluatorLib evl = new EvaluatorLib();
         int res = evl.evaluateExpression(input);
         assertEquals(res,2);
+    }
+    @Test
+    public void testSimgleNestedBrackets() throws Exception {
+        String input = "(2 + (2 * 3))";
+        EvaluatorLib evl = new EvaluatorLib();
+        int res = evl.evaluateExpression(input);
+        assertEquals(res,8);
+    }
+    @Test
+    public void testMultipleNestedBrackets() throws Exception {
+        String input = "(2 + (2 * 3)) + ((6 / 2) + 1)";
+        EvaluatorLib evl = new EvaluatorLib();
+        int res = evl.evaluateExpression(input);
+        assertEquals(res,12);
     }
 
 
