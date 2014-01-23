@@ -73,6 +73,71 @@ public class EvaluatorLibTest {
         double res = evl.evaluateExpression(input);
         assertEquals(res, expected);
     }
+    @Test
+    public void testTrimSpacesForAddition() throws Exception {
+        String input = "2 +3";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 5;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
+    @Test
+    public void testTrimSpacesForsubstraction() throws Exception {
+        String input = "2 -3";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = -1;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
+    @Test
+    public void testTrimSpacesForMultiplication() throws Exception {
+        String input = "2 *3";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 6;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
+    @Test
+    public void testTrimSpacesForDivision() throws Exception {
+        String input = "10/ 2";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 5;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
+    @Test
+    public void testTrimSpacesForMultipleOperations() throws Exception {
+        String input = "10/ 2 -2";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 3;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
 
+    @Test
+    public void testTrimSpacesNegativeNumbers() throws Exception {
+        String input = "10+-2";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 8;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
+    @Test
+    public void testTrimSpacesForSingleBracket() throws Exception {
+        String input = "10+(2 +2)";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 14;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
+    @Test
+    public void testTrimSpacesForMultipleBracket() throws Exception {
+        String input = "10+(2 +( 2-1))";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 13;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
+    
 
 }
