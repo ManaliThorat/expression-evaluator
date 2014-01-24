@@ -187,12 +187,22 @@ public class EvaluatorLibTest {
         double res = evl.evaluateExpression(input);
         assertEquals(expected,res);
     }
-    @Test
-    public void TestTwoMinusSigns() throws Exception {
-        String input = "-(-2)";
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void TestTwoFollowdByMultiplicationSign() throws Exception {
+        String input = "2*";
         EvaluatorLib evl = new EvaluatorLib();
-        double expected = 2;
-        double res = evl.evaluateExpression(input);
-        assertEquals(expected,res);
+        evl.evaluateExpression(input);
+    }
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void TestTwoFollowdByAdditionSign() throws Exception {
+        String input = "2*";
+        EvaluatorLib evl = new EvaluatorLib();
+        evl.evaluateExpression(input);
+    }
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void TestWithCharecter() throws Exception {
+        String input = "2a + 1";
+        EvaluatorLib evl = new EvaluatorLib();
+        evl.evaluateExpression(input);
     }
 }
