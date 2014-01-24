@@ -195,13 +195,19 @@ public class EvaluatorLibTest {
     }
     @Test(expected = IndexOutOfBoundsException.class)
     public void TestTwoFollowdByAdditionSign() throws Exception {
-        String input = "2*";
+        String input = "2+";
         EvaluatorLib evl = new EvaluatorLib();
         evl.evaluateExpression(input);
     }
     @Test(expected = IndexOutOfBoundsException.class)
     public void TestWithCharecter() throws Exception {
-        String input = "2a + 1";
+        String input = "1 + a";
+        EvaluatorLib evl = new EvaluatorLib();
+        evl.evaluateExpression(input);
+    }
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void TestWithCharecter1() throws Exception {
+        String input = "a1 + 2";
         EvaluatorLib evl = new EvaluatorLib();
         evl.evaluateExpression(input);
     }
