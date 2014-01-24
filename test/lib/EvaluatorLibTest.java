@@ -164,10 +164,34 @@ public class EvaluatorLibTest {
         assertEquals(res, expected);
     }
     @Test
-    public void TestSpaceInNumbeasxar() throws Exception {
+    public void TestStartWithMinus() throws Exception {
         String input = "( -1 )";
         EvaluatorLib evl = new EvaluatorLib();
         double expected = -1;
+        double res = evl.evaluateExpression(input);
+        assertEquals(expected,res);
+    }
+    @Test
+    public void TestMultipleBrackets() throws Exception {
+        String input = "(((((( 4 ))))))";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 4;
+        double res = evl.evaluateExpression(input);
+        assertEquals(expected,res);
+    }
+    @Test
+    public void TestMinusInBracket() throws Exception {
+        String input = "32+(-2)";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 30;
+        double res = evl.evaluateExpression(input);
+        assertEquals(expected,res);
+    }
+    @Test
+    public void TestTwoMinusSigns() throws Exception {
+        String input = "-(-2)";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 2;
         double res = evl.evaluateExpression(input);
         assertEquals(expected,res);
     }
