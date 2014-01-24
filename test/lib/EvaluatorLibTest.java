@@ -106,6 +106,14 @@ public class EvaluatorLibTest {
         assertEquals(res, expected);
     }
     @Test
+    public void testTrimSpacesForExponential() throws Exception {
+        String input = "10^ 2";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 100;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
+    @Test
     public void testTrimSpacesForMultipleOperations() throws Exception {
         String input = "10/ 2 -2";
         EvaluatorLib evl = new EvaluatorLib();
@@ -138,6 +146,29 @@ public class EvaluatorLibTest {
         double res = evl.evaluateExpression(input);
         assertEquals(res, expected);
     }
-    
+    @Test
+    public void TestTwoNegativeNumbers() throws Exception {
+        String input = "-1-1";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = -2;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
 
+    @Test
+    public void TestSpaceInNumber() throws Exception {
+        String input = "2 2 +2";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = 24;
+        double res = evl.evaluateExpression(input);
+        assertEquals(res, expected);
+    }
+    @Test
+    public void TestSpaceInNumbeasxar() throws Exception {
+        String input = "( -1 )";
+        EvaluatorLib evl = new EvaluatorLib();
+        double expected = -1;
+        double res = evl.evaluateExpression(input);
+        assertEquals(expected,res);
+    }
 }
