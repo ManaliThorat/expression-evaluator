@@ -5,9 +5,6 @@ import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 
-/**
- * Created by manalit on 1/20/14.
- */
 public class EvaluatorLibTest {
     @Test
     public void testEvaluate() throws Exception {
